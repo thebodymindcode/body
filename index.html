@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 фактов о теле — Архитектура сознания</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8F5F0;
+  --bg2:#F0EAE0;
+  --bg3:#E8E2D6;
+  --card:#FFFFFF;
+  --sage:#3D7A55;
+  --sage-d:#2D6343;
+  --sage-l:#5E9172;
+  --sage-pale:rgba(61,122,85,0.05);
+  --sage-brd:rgba(61,122,85,0.14);
+  --sage-brd-h:rgba(61,122,85,0.35);
+  --warm:#8B6B4A;
+  --warm-pale:rgba(139,107,74,0.05);
+  --rose:#A05C58;
+  --text:#1A1E1B;
+  --body:#2E3530;
+  --muted:#4A524C;
+  --dim:#6B756D;
+  --border:rgba(61,122,85,0.1);
+  --S:'Cormorant Garamond',Georgia,serif;
+  --R:'Raleway',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--R);background:var(--bg);color:var(--body);font-size:18px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--S);font-weight:500;line-height:1.15;color:var(--text)}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.015;pointer-events:none;z-index:10000}
+.cw{max-width:1100px;margin:0 auto;padding:0 32px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:all .4s}
+nav.scrolled{background:rgba(248,245,240,.95);backdrop-filter:blur(14px);box-shadow:0 2px 30px rgba(61,122,85,.05);padding:12px 0}
+.nav-i{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 32px}
+.nav-logo{font-family:var(--S);font-size:1.05rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text);text-decoration:none}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 32px 110px;position:relative;background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 50% 20%,rgba(61,122,85,.06),transparent 60%);pointer-events:none}
+.breath{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.br{border-radius:50%;border:1px solid rgba(61,122,85,.06);animation:breathe 8s ease-in-out infinite;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.br1{width:300px;height:300px}.br2{width:400px;height:400px;animation-delay:-2.5s;border-color:rgba(61,122,85,.04)}.br3{width:500px;height:500px;animation-delay:-5s;border-color:rgba(61,122,85,.025)}
+@keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.25}50%{transform:translate(-50%,-50%) scale(1.1);opacity:.65}}
+.hero-badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);padding:10px 26px;border:1px solid var(--sage-brd);margin-bottom:44px;opacity:0;animation:fadeUp .8s .2s forwards}
+.hero h1{font-size:clamp(2.8rem,7.5vw,5.5rem);font-weight:400;color:var(--text);margin-bottom:14px;letter-spacing:-.02em;opacity:0;animation:fadeUp .8s .4s forwards}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.hero-sub{font-size:clamp(1.08rem,2vw,1.25rem);color:var(--muted);max-width:640px;margin:22px auto 0;line-height:1.85;font-weight:400;opacity:0;animation:fadeUp .8s .6s forwards}
+.scroll-h{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp .8s 1.2s forwards}
+.scroll-h span{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dim)}
+.scroll-l{width:1px;height:30px;background:linear-gradient(to bottom,var(--sage),transparent);animation:sp 2.5s ease infinite}
+@keyframes sp{0%,100%{opacity:.2}50%{opacity:.7}}
+
+/* INTRO */
+.intro{padding:110px 32px 70px;text-align:center}
+.intro p{max-width:660px;margin:0 auto;font-size:1.18rem;line-height:1.9;color:var(--body)}
+.intro .bright{color:var(--text);font-weight:600;font-size:1.25rem}
+
+/* DIVIDER */
+.dv{width:100%;max-width:260px;height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--sage-brd),transparent);position:relative}
+.dv::after{content:'✦';position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--sage);background:var(--bg);padding:0 14px}
+.dv.b2::after{background:var(--bg2)}
+
+/* FACT SECTIONS */
+.fact{padding:100px 0;position:relative}
+.fi{max-width:1100px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.fi.rev{direction:rtl}.fi.rev>*{direction:ltr}
+.fn{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.fn::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--sage-brd),transparent)}
+.ft{font-family:var(--S);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:500;color:var(--text);line-height:1.22;margin-bottom:24px}
+.fb{font-size:1.05rem;line-height:1.85;color:var(--body)}
+.fb p{margin-bottom:16px}
+.fb strong{color:var(--text);font-weight:600}
+
+/* HIGHLIGHT */
+.hl{border-left:3px solid;border-image:linear-gradient(to bottom,var(--sage),var(--warm)) 1;padding:24px 30px;margin:28px 0;background:linear-gradient(135deg,var(--sage-pale),var(--warm-pale));border-radius:0 10px 10px 0}
+.hl p{font-family:var(--S);font-size:1.35rem;font-style:italic;color:var(--text);line-height:1.55;margin:0}
+
+/* INFO CARD */
+.ic{background:var(--card);border:1px solid var(--sage-brd);padding:40px;position:relative;overflow:hidden}
+.ic::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--sage),transparent);opacity:.35}
+.bn{font-family:var(--S);font-size:4.5rem;font-weight:600;color:var(--sage);line-height:1}
+.sl{font-size:.95rem;color:var(--dim);margin-top:6px;font-weight:500}
+.ss{font-size:.78rem;color:var(--dim);margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-weight:500}
+
+/* PROGRESS BARS */
+.pb{margin-bottom:22px}
+.pb-l{display:flex;justify-content:space-between;margin-bottom:7px;font-size:.9rem;font-weight:600;color:var(--body)}
+.pb-l span:last-child{color:var(--sage);font-weight:700}
+.pb-t{height:6px;background:rgba(61,122,85,.06);border-radius:6px;overflow:hidden}
+.pb-f{height:100%;border-radius:6px;width:0%;transition:width 1.8s cubic-bezier(.22,1,.36,1)}
+.pb-f.sg{background:linear-gradient(90deg,var(--sage),var(--sage-l))}
+.pb-f.wm{background:linear-gradient(90deg,var(--warm),#A88560)}
+.pb-f.rs{background:linear-gradient(90deg,var(--rose),#C07A76)}
+.pb-f.dm{background:linear-gradient(90deg,#90A090,#B0C0B0)}
+.visible .pb-f{width:var(--w)}
+
+/* CIRCLE */
+.cc{position:relative;width:210px;height:210px;margin:0 auto}
+.cc svg{transform:rotate(-90deg)}
+.cc .trk{fill:none;stroke:rgba(61,122,85,.06);stroke-width:8}
+.cc .fl{fill:none;stroke:url(#cG);stroke-width:8;stroke-linecap:round;stroke-dasharray:565;stroke-dashoffset:565;transition:stroke-dashoffset 2.2s cubic-bezier(.22,1,.36,1)}
+.visible .cc .fl{stroke-dashoffset:var(--off)}
+.cc-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cc-c .n{font-family:var(--S);font-size:3.5rem;font-weight:600;color:var(--text)}
+.cc-c .u{font-size:.9rem;color:var(--dim);margin-top:-2px}
+
+/* BRIDGE */
+.bridge{padding:130px 32px;text-align:center;background:var(--bg2)}
+.bridge-i{max-width:780px;margin:0 auto}
+.bridge-lb{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--sage);margin-bottom:22px}
+.bridge h2{font-family:var(--S);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;color:var(--text);line-height:1.2;margin-bottom:36px}
+.bridge h2 em{color:var(--sage);font-style:italic}
+.bridge p{font-size:1.15rem;margin-bottom:20px;line-height:1.85}
+.bridge strong{color:var(--text)}
+.bridge .fin{color:var(--text);font-size:1.3rem;font-weight:600;margin-top:10px}
+
+/* CTA */
+.cta-w{padding:110px 32px;text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.cta-c{max-width:580px;margin:0 auto;background:var(--card);border:1px solid var(--sage-brd-h);padding:60px 48px;position:relative;box-shadow:0 14px 50px rgba(61,122,85,.06)}
+.cta-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--sage),transparent)}
+.cta-c h2{font-family:var(--S);font-size:clamp(1.8rem,4vw,2.5rem);font-weight:500;color:var(--text);margin-bottom:16px}
+.cta-c .sub{font-size:1.08rem;color:var(--muted);margin-bottom:36px;line-height:1.8}
+.btn{display:inline-block;padding:20px 52px;background:var(--sage);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;font-family:var(--R);transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:left .6s}
+.btn:hover::before{left:100%}
+.btn:hover{background:var(--sage-d);transform:translateY(-3px);box-shadow:0 18px 44px rgba(61,122,85,.2)}
+.cta-meta{font-size:.95rem;color:var(--dim);margin-top:22px;font-weight:500}
+.cta-ff{display:flex;gap:22px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.cta-f{display:flex;align-items:center;gap:7px;font-size:.9rem;color:var(--muted);font-weight:500}
+.cta-f svg{color:var(--sage);flex-shrink:0}
+
+footer{text-align:center;padding:50px 32px;border-top:1px solid var(--border);font-size:.85rem;color:var(--dim)}
+footer a{color:var(--sage);text-decoration:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.counter{font-variant-numeric:tabular-nums}
+
+@media(max-width:900px){.fi,.fi.rev{grid-template-columns:1fr;direction:ltr;gap:40px}.fi.rev>*{direction:ltr}.hero{padding:100px 24px 90px}.cw{padding:0 24px}}
+@media(max-width:600px){.fact{padding:70px 0}.fi{padding:0 20px}.ic{padding:28px 22px}.cta-c{padding:44px 24px}.cta-ff{flex-direction:column;align-items:center;gap:10px}.bridge{padding:90px 20px}.hero h1{font-size:clamp(2.2rem,10vw,3.2rem)!important}body{font-size:17px}}
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0"><defs>
+  <linearGradient id="cG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3D7A55"/><stop offset="100%" stop-color="#8B6B4A"/></linearGradient>
+</defs></svg>
+
+<nav id="nav"><div class="nav-i"><a href="#" class="nav-logo">Архитектура сознания</a></div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="breath"><div class="br br1"></div><div class="br br2"></div><div class="br br3"></div></div>
+  <div class="hero-badge">Архитектура сознания</div>
+  <h1>Почему тело болеет,<br>даже когда вы делаете<br>всё <em>«правильно»</em></h1>
+  <p class="hero-sub">9 фактов о связи тела и сознания, которые объясняют хронические состояния, усталость и ощущение, что жизнь проходит мимо</p>
+  <div class="scroll-h"><span>Читать</span><div class="scroll-l"></div></div>
+</section>
+
+<!-- INTRO -->
+<div class="intro rv">
+  <p>Вы следите за здоровьем. Сдаёте анализы. Ходите к врачам. Пьёте витамины. Контролируете диету.</p>
+  <br>
+  <p>И при этом — тело живёт своей жизнью. Симптомы возвращаются. Энергии нет. Ощущение, что вы «справляетесь», а не живёте.</p>
+  <br>
+  <p class="bright">Что, если проблема не в том, что вы делаете — а в том, откуда?</p>
+</div>
+<div class="dv"></div>
+
+<!-- ФАКТ 1 -->
+<section class="fact rv">
+  <div class="fi">
+    <div>
+      <div class="fn">Факт 01</div>
+      <div class="ft">75–90% визитов к врачу связаны со стрессом. Не с бактериями.</div>
+      <div class="fb">
+        <p>Когда мы говорим «стресс» — мы представляем дедлайны и пробки. Но тело понимает стресс иначе.</p>
+        <p>Для тела стресс — это <strong>любой режим, в котором нужно выживать</strong>. Контроль, напряжение, «держаться», «справляться» — всё это биохимически один и тот же сигнал: опасность.</p>
+        <p>И тело реагирует: кортизол, адреналин, воспаление. Не потому, что вы больны. А потому, что <strong>вы в режиме борьбы</strong>.</p>
+      </div>
+      <div class="hl"><p>Тело не ломается. Оно реагирует. Точно и биохимически — на то, как вы живёте.</p></div>
+    </div>
+    <div>
+      <div class="ic" style="text-align:center">
+        <div class="cc">
+          <svg width="210" height="210" viewBox="0 0 210 210"><circle class="trk" cx="105" cy="105" r="90"/><circle class="fl" cx="105" cy="105" r="90" style="--off:141"/></svg>
+          <div class="cc-c"><div class="n counter" data-target="75">0</div><div class="u">–90% визитов</div></div>
+        </div>
+        <p style="margin-top:20px;font-size:1rem;color:var(--dim)">связаны со стрессом, а не с инфекцией</p>
+        <div class="ss">American Institute of Stress · Benson, Harvard Medical School</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 2 -->
+<section class="fact rv" style="background:var(--bg2)">
+  <div class="fi rev">
+    <div>
+      <div class="fn">Факт 02</div>
+      <div class="ft">У вашего тела два режима. И вы застряли в первом.</div>
+      <div class="fb">
+        <p>Вегетативная нервная система управляет всем, что вы не контролируете сознательно: сердцебиение, пищеварение, иммунитет, сон, гормоны.</p>
+        <p>У неё два режима:<br><strong>Симпатический</strong> — «бей или беги». Мобилизация, напряжение, выживание.<br><strong>Парасимпатический</strong> — «отдыхай и восстанавливайся». Исцеление, регенерация.</p>
+        <p><strong>Тело восстанавливается только во втором.</strong> Но большинство людей проводят в первом 80–90% времени бодрствования.</p>
+      </div>
+      <div class="hl"><p>Тело не может исцеляться в режиме борьбы. Это физиология, а не психология.</p></div>
+    </div>
+    <div>
+      <div class="ic">
+        <svg width="100%" height="230" viewBox="0 0 400 230">
+          <rect x="10" y="10" width="182" height="210" rx="4" fill="rgba(160,92,88,.04)" stroke="rgba(160,92,88,.15)" stroke-width="1"/>
+          <text x="101" y="38" text-anchor="middle" fill="var(--rose)" font-size="13" font-weight="700" font-family="var(--R)" letter-spacing="2">ВЫЖИВАНИЕ</text>
+          <text x="101" y="56" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Симпатическая НС</text>
+          <g fill="var(--body)" font-size="12" font-family="var(--R)">
+            <text x="30" y="86">↑ Кортизол</text><text x="30" y="108">↑ Воспаление</text><text x="30" y="130">↑ Сахар в крови</text><text x="30" y="152">↓ Пищеварение</text><text x="30" y="174">↓ Иммунитет</text><text x="30" y="196">↓ Регенерация</text>
+          </g>
+          <circle cx="170" cy="148" r="14" fill="rgba(160,92,88,.06)" stroke="rgba(160,92,88,.2)" stroke-width="1"><animate attributeName="r" values="10;20;10" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;.15;.6" dur="2s" repeatCount="indefinite"/></circle>
+          <rect x="208" y="10" width="182" height="210" rx="4" fill="rgba(61,122,85,.04)" stroke="rgba(61,122,85,.15)" stroke-width="1"/>
+          <text x="299" y="38" text-anchor="middle" fill="var(--sage)" font-size="13" font-weight="700" font-family="var(--R)" letter-spacing="2">ВОССТАНОВЛЕНИЕ</text>
+          <text x="299" y="56" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Парасимпатическая НС</text>
+          <g fill="var(--body)" font-size="12" font-family="var(--R)">
+            <text x="228" y="86">↓ Кортизол</text><text x="228" y="108">↓ Воспаление</text><text x="228" y="130">↑ Пищеварение</text><text x="228" y="152">↑ Иммунитет</text><text x="228" y="174">↑ Регенерация</text><text x="228" y="196">↑ Сон и покой</text>
+          </g>
+          <circle cx="368" cy="148" r="14" fill="rgba(61,122,85,.04)" stroke="rgba(61,122,85,.15)" stroke-width="1"><animate attributeName="r" values="12;16;12" dur="4s" repeatCount="indefinite"/></circle>
+        </svg>
+        <div style="margin-top:16px">
+          <div class="pb"><div class="pb-l"><span>Время в режиме «выживания»</span><span>80–90%</span></div><div class="pb-t"><div class="pb-f rs" style="--w:85%"></div></div></div>
+          <div class="pb"><div class="pb-l"><span>Время в режиме «восстановления»</span><span>10–20%</span></div><div class="pb-t"><div class="pb-f sg" style="--w:15%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 3 -->
+<section class="fact rv">
+  <div class="fi">
+    <div>
+      <div class="fn">Факт 03</div>
+      <div class="ft">Блуждающий нерв — магистраль между мозгом и телом. И он молчит.</div>
+      <div class="fb">
+        <p><strong>Vagus nerve</strong> — самый длинный нерв в теле. Он соединяет мозг с сердцем, лёгкими, кишечником, печенью, иммунной системой.</p>
+        <p>Его тонус определяет, насколько быстро вы восстанавливаетесь после стресса. <strong>Высокий тонус</strong> = быстрое восстановление. <strong>Низкий</strong> = хроническое воспаление, плохой сон, тревога.</p>
+        <p>У большинства людей с хроническими состояниями тонус блуждающего нерва <strong>снижен</strong>.</p>
+      </div>
+      <div class="hl"><p>Тело не получает сигнал «всё безопасно». Поэтому не включает восстановление.</p></div>
+    </div>
+    <div>
+      <div class="ic" style="text-align:center">
+        <svg width="220" height="310" viewBox="0 0 220 310" style="margin:0 auto;display:block">
+          <ellipse cx="110" cy="38" rx="42" ry="30" fill="rgba(61,122,85,.04)" stroke="rgba(61,122,85,.18)" stroke-width="1"/>
+          <text x="110" y="42" text-anchor="middle" fill="var(--sage)" font-size="13" font-weight="600" font-family="var(--R)">Мозг</text>
+          <path d="M110,68 Q110,88 104,110 Q96,140 110,165 Q124,185 116,215 Q108,248 110,275" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-dasharray="7 5" opacity=".45"><animate attributeName="stroke-dashoffset" values="0;-24" dur="2.5s" repeatCount="indefinite"/></path>
+          <ellipse cx="55" cy="125" rx="30" ry="18" fill="rgba(61,122,85,.03)" stroke="rgba(61,122,85,.12)" stroke-width="1"/><text x="55" y="129" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Сердце</text><line x1="104" y1="110" x2="78" y2="118" stroke="rgba(61,122,85,.15)" stroke-width="1"/>
+          <ellipse cx="165" cy="165" rx="32" ry="18" fill="rgba(61,122,85,.03)" stroke="rgba(61,122,85,.12)" stroke-width="1"/><text x="165" y="169" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Лёгкие</text><line x1="118" y1="163" x2="141" y2="163" stroke="rgba(61,122,85,.15)" stroke-width="1"/>
+          <ellipse cx="50" cy="218" rx="34" ry="20" fill="rgba(139,107,74,.04)" stroke="rgba(139,107,74,.12)" stroke-width="1"/><text x="50" y="222" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Кишечник</text><line x1="110" y1="215" x2="78" y2="215" stroke="rgba(139,107,74,.12)" stroke-width="1"/>
+          <ellipse cx="170" cy="252" rx="30" ry="18" fill="rgba(139,107,74,.04)" stroke="rgba(139,107,74,.12)" stroke-width="1"/><text x="170" y="256" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Иммунитет</text><line x1="116" y1="248" x2="147" y2="248" stroke="rgba(139,107,74,.12)" stroke-width="1"/>
+          <text x="182" y="110" fill="var(--sage)" font-size="11" font-weight="600" font-family="var(--R)" opacity=".55">Vagus</text><text x="182" y="124" fill="var(--sage)" font-size="11" font-weight="600" font-family="var(--R)" opacity=".55">nerve</text>
+          <circle r="4" fill="var(--sage)" opacity=".5"><animateMotion dur="3.5s" repeatCount="indefinite" path="M110,68 Q110,88 104,110 Q96,140 110,165 Q124,185 116,215 Q108,248 110,275"/></circle>
+        </svg>
+        <div class="ss">Porges, 2011 · Bonaz et al., Nature Reviews, 2018</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 4 -->
+<section class="fact rv" style="background:var(--bg2)">
+  <div class="fi rev">
+    <div>
+      <div class="fn">Факт 04</div>
+      <div class="ft">Хронический стресс физически меняет тело. За недели.</div>
+      <div class="fb">
+        <p>6 недель хронического стресса достаточно, чтобы изменить:</p>
+        <p>→ <strong>Кишечную проницаемость</strong> — «дырявый кишечник», аллергии, аутоиммунные реакции<br>→ <strong>Объём гиппокампа</strong> — память ухудшается, тревога растёт<br>→ <strong>Микрофлору</strong> — меняется за 2 недели стресса<br>→ <strong>Теломеры</strong> — клетки стареют быстрее<br>→ <strong>Воспалительные маркеры</strong> — IL-6, C-реактивный белок повышаются</p>
+      </div>
+      <div class="hl"><p>Стресс — это не «в голове». Это биохимия, которая физически перестраивает тело.</p></div>
+    </div>
+    <div>
+      <div class="ic">
+        <div style="text-align:center;margin-bottom:28px"><div class="bn">6</div><div class="sl">недель хронического стресса меняют тело</div></div>
+        <div class="pb"><div class="pb-l"><span>Проницаемость кишечника</span><span>↑ увеличивается</span></div><div class="pb-t"><div class="pb-f rs" style="--w:72%"></div></div></div>
+        <div class="pb"><div class="pb-l"><span>Объём гиппокампа</span><span>↓ уменьшается</span></div><div class="pb-t"><div class="pb-f dm" style="--w:28%"></div></div></div>
+        <div class="pb"><div class="pb-l"><span>Воспалительные маркеры</span><span>↑ растут</span></div><div class="pb-t"><div class="pb-f rs" style="--w:65%"></div></div></div>
+        <div class="pb"><div class="pb-l"><span>Старение клеток</span><span>↑ ускоряется</span></div><div class="pb-t"><div class="pb-f wm" style="--w:48%"></div></div></div>
+        <div class="ss">Epel et al., PNAS, 2004 · McEwen, NEJM, 1998</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 5 -->
+<section class="fact rv">
+  <div class="fi">
+    <div>
+      <div class="fn">Факт 05</div>
+      <div class="ft">90% серотонина производится в кишечнике. Не в мозге.</div>
+      <div class="fb">
+        <p>«Гормон счастья» — серотонин — на 90% вырабатывается в кишечнике. Дофамин — на 50%. Кишечник содержит <strong>100 миллионов нейронов</strong> — больше, чем спинной мозг.</p>
+        <p>Учёные называют его <strong>«вторым мозгом»</strong>. Он связан с настоящим мозгом через блуждающий нерв.</p>
+        <p>Когда вы в режиме стресса — пищеварение замедляется, микрофлора меняется, производство серотонина <strong>падает</strong>. Результат: тревога, плохой сон, подавленность.</p>
+      </div>
+      <div class="hl"><p>Депрессия и тревога часто начинаются в животе. Буквально.</p></div>
+    </div>
+    <div>
+      <div class="ic" style="text-align:center">
+        <svg width="100%" height="220" viewBox="0 0 380 220">
+          <ellipse cx="100" cy="55" rx="55" ry="38" fill="rgba(61,122,85,.03)" stroke="rgba(61,122,85,.12)" stroke-width="1"/><text x="100" y="50" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="600" font-family="var(--R)">Мозг</text><text x="100" y="68" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">10% серотонина</text>
+          <ellipse cx="280" cy="55" rx="58" ry="38" fill="rgba(139,107,74,.05)" stroke="rgba(139,107,74,.15)" stroke-width="1"/><text x="280" y="50" text-anchor="middle" fill="var(--warm)" font-size="13" font-weight="600" font-family="var(--R)">Кишечник</text><text x="280" y="68" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">90% серотонина</text>
+          <line x1="155" y1="55" x2="222" y2="55" stroke="rgba(61,122,85,.15)" stroke-width="1.5" stroke-dasharray="6 4"><animate attributeName="stroke-dashoffset" values="0;-20" dur="2s" repeatCount="indefinite"/></line>
+          <text x="188" y="48" text-anchor="middle" fill="var(--dim)" font-size="9" font-family="var(--R)">vagus nerve</text>
+          <!-- Serotonin bars -->
+          <rect x="50" y="120" width="110" height="80" rx="4" fill="rgba(61,122,85,.03)" stroke="rgba(61,122,85,.08)" stroke-width="1"/>
+          <text x="105" y="140" text-anchor="middle" fill="var(--dim)" font-size="10" font-weight="700" font-family="var(--R)">СЕРОТОНИН</text>
+          <rect x="70" y="152" width="22" height="36" rx="2" fill="rgba(61,122,85,.15)"/><text x="81" y="200" text-anchor="middle" fill="var(--dim)" font-size="9" font-family="var(--R)">мозг</text>
+          <rect x="108" y="122" width="22" height="66" rx="2" fill="rgba(61,122,85,.35)"><animate attributeName="height" values="62;70;62" dur="3s" repeatCount="indefinite"/></rect><text x="119" y="200" text-anchor="middle" fill="var(--dim)" font-size="9" font-family="var(--R)">кишечн.</text>
+          <!-- Neurons -->
+          <rect x="220" y="120" width="110" height="80" rx="4" fill="rgba(139,107,74,.03)" stroke="rgba(139,107,74,.08)" stroke-width="1"/>
+          <text x="275" y="140" text-anchor="middle" fill="var(--dim)" font-size="10" font-weight="700" font-family="var(--R)">НЕЙРОНЫ</text>
+          <rect x="240" y="156" width="22" height="32" rx="2" fill="rgba(139,107,74,.2)"/><text x="251" y="200" text-anchor="middle" fill="var(--dim)" font-size="9" font-family="var(--R)">спинной</text>
+          <rect x="278" y="148" width="22" height="40" rx="2" fill="rgba(139,107,74,.35)"/><text x="289" y="200" text-anchor="middle" fill="var(--dim)" font-size="9" font-family="var(--R)">кишечн.</text>
+          <text x="289" y="214" text-anchor="middle" fill="var(--warm)" font-size="9" font-weight="700" font-family="var(--R)">100 млн</text>
+        </svg>
+        <div class="ss">Yano et al., Cell, 2015 · Gershon, Columbia University</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 6 -->
+<section class="fact rv" style="background:var(--bg2)">
+  <div class="fi rev">
+    <div>
+      <div class="fn">Факт 06</div>
+      <div class="ft">Тело помнит то, что вы давно забыли.</div>
+      <div class="fb">
+        <p>Мышцы, фасции, внутренние органы — всё хранит «память» о состояниях, в которых вы находились годами.</p>
+        <p><strong>Сжатые плечи</strong> — годы «нужно держаться». <strong>Спазмы в животе</strong> — «нельзя расслабиться». <strong>Зажатая спина</strong> — несение нагрузки, которую давно пора отпустить.</p>
+        <p>Хроническое мышечное напряжение нарушает кровоснабжение, нервную проводимость и уровень воспаления в конкретных зонах тела.</p>
+      </div>
+      <div class="hl"><p>Тело не «болит просто так». Оно продолжает реагировать на ситуацию, которой уже нет.</p></div>
+    </div>
+    <div>
+      <div class="ic" style="text-align:center">
+        <svg width="200" height="300" viewBox="0 0 200 300" style="margin:0 auto;display:block">
+          <ellipse cx="100" cy="35" rx="20" ry="24" fill="rgba(61,122,85,.02)" stroke="rgba(61,122,85,.1)" stroke-width="1"/>
+          <rect x="72" y="60" width="56" height="80" rx="10" fill="rgba(61,122,85,.02)" stroke="rgba(61,122,85,.08)" stroke-width="1"/>
+          <rect x="76" y="140" width="20" height="90" rx="5" fill="rgba(61,122,85,.015)" stroke="rgba(61,122,85,.06)" stroke-width="1"/>
+          <rect x="104" y="140" width="20" height="90" rx="5" fill="rgba(61,122,85,.015)" stroke="rgba(61,122,85,.06)" stroke-width="1"/>
+          <ellipse cx="100" cy="68" rx="34" ry="12" fill="rgba(160,92,88,.08)" stroke="rgba(160,92,88,.2)" stroke-width="1.5"><animate attributeName="ry" values="10;15;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".5;1;.5" dur="3s" repeatCount="indefinite"/></ellipse>
+          <text x="156" y="68" fill="var(--rose)" font-size="11" font-weight="600" font-family="var(--R)">Плечи</text><text x="156" y="82" fill="var(--dim)" font-size="9" font-family="var(--R)">«нужно держаться»</text>
+          <ellipse cx="100" cy="102" rx="24" ry="14" fill="rgba(160,92,88,.08)" stroke="rgba(160,92,88,.2)" stroke-width="1.5"><animate attributeName="ry" values="12;17;12" dur="3.5s" repeatCount="indefinite" begin=".6s"/><animate attributeName="opacity" values=".4;1;.4" dur="3.5s" repeatCount="indefinite" begin=".6s"/></ellipse>
+          <text x="156" y="102" fill="var(--rose)" font-size="11" font-weight="600" font-family="var(--R)">Живот</text><text x="156" y="116" fill="var(--dim)" font-size="9" font-family="var(--R)">«нельзя расслабиться»</text>
+          <ellipse cx="100" cy="134" rx="22" ry="10" fill="rgba(139,107,74,.06)" stroke="rgba(139,107,74,.18)" stroke-width="1.5"><animate attributeName="ry" values="8;13;8" dur="4s" repeatCount="indefinite" begin="1.2s"/></ellipse>
+          <text x="156" y="136" fill="var(--warm)" font-size="11" font-weight="600" font-family="var(--R)">Спина</text><text x="156" y="150" fill="var(--dim)" font-size="9" font-family="var(--R)">«несу нагрузку»</text>
+          <text x="100" y="258" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Тело хранит напряжение</text>
+          <text x="100" y="276" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">в конкретных зонах</text>
+        </svg>
+        <div class="ss">Van der Kolk, «The Body Keeps the Score», 2014</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 7 -->
+<section class="fact rv">
+  <div class="fi">
+    <div>
+      <div class="fn">Факт 07</div>
+      <div class="ft">«Режим выживания» отключает всё, что делает жизнь жизнью.</div>
+      <div class="fb">
+        <p>Когда тело в режиме угрозы, оно перенаправляет ресурсы. Отключает всё «ненужное для выживания»:</p>
+        <p>→ <strong>Пищеварение</strong> замедляется<br>→ <strong>Иммунитет</strong> снижается<br>→ <strong>Репродукция</strong> угнетается<br>→ <strong>Творчество</strong> блокируется</p>
+        <p>И самое важное: <strong>способность чувствовать удовольствие</strong> снижается. Серотонин, дофамин, окситоцин — всё подавлено.</p>
+      </div>
+      <div class="hl"><p>Вы не «перестали радоваться». Тело экономит ресурсы на выживание. Радость — предмет роскоши для организма в режиме борьбы.</p></div>
+    </div>
+    <div>
+      <div class="ic">
+        <svg width="100%" height="280" viewBox="0 0 380 280">
+          <text x="190" y="26" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="700" font-family="var(--R)" letter-spacing="2">РЕЖИМ ВЫЖИВАНИЯ</text>
+          <line x1="40" y1="42" x2="340" y2="42" stroke="var(--border)" stroke-width="1"/>
+          <g font-family="var(--R)" font-size="13">
+            <text x="40" y="78" fill="var(--body)" font-weight="500">Пищеварение</text><rect x="190" y="66" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="190" y="66" width="30" height="16" rx="8" fill="rgba(160,92,88,.35)"><animate attributeName="width" values="30;24;30" dur="2.5s" repeatCount="indefinite"/></rect><text x="350" y="78" text-anchor="end" fill="var(--rose)" font-size="12" font-weight="700">↓</text>
+            <text x="40" y="118" fill="var(--body)" font-weight="500">Иммунитет</text><rect x="190" y="106" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="190" y="106" width="38" height="16" rx="8" fill="rgba(160,92,88,.35)"><animate attributeName="width" values="38;30;38" dur="3s" repeatCount="indefinite"/></rect><text x="350" y="118" text-anchor="end" fill="var(--rose)" font-size="12" font-weight="700">↓</text>
+            <text x="40" y="158" fill="var(--body)" font-weight="500">Регенерация</text><rect x="190" y="146" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="190" y="146" width="22" height="16" rx="8" fill="rgba(160,92,88,.35)"/><text x="350" y="158" text-anchor="end" fill="var(--rose)" font-size="12" font-weight="700">↓↓</text>
+            <text x="40" y="198" fill="var(--body)" font-weight="500">Удовольствие</text><rect x="190" y="186" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="190" y="186" width="16" height="16" rx="8" fill="rgba(160,92,88,.35)"/><text x="350" y="198" text-anchor="end" fill="var(--rose)" font-size="12" font-weight="700">↓↓↓</text>
+            <text x="40" y="238" fill="var(--body)" font-weight="500">Кортизол</text><rect x="190" y="226" width="150" height="16" rx="8" fill="rgba(61,122,85,.06)"/><rect x="190" y="226" width="135" height="16" rx="8" fill="rgba(160,92,88,.25)"><animate attributeName="width" values="125;145;125" dur="3s" repeatCount="indefinite"/></rect><text x="350" y="238" text-anchor="end" fill="var(--rose)" font-size="12" font-weight="700">↑↑↑</text>
+          </g>
+          <text x="190" y="272" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">Тело перенаправляет все ресурсы на борьбу</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 8 -->
+<section class="fact rv" style="background:var(--bg2)">
+  <div class="fi rev">
+    <div>
+      <div class="fn">Факт 08</div>
+      <div class="ft">Мысли меняют тело. Это не метафора — это эпигенетика.</div>
+      <div class="fb">
+        <p>Эпигенетика — наука о том, как среда и поведение включают и выключают гены. <strong>Не меняя ДНК.</strong></p>
+        <p>Хронический стресс включает гены воспаления. Состояние покоя и безопасности — включает гены восстановления.</p>
+        <p>Исследования Герберта Бенсона (Harvard) показали: 8 недель практики расслабления <strong>изменили экспрессию более 2 200 генов</strong>. Гены воспаления — снизили активность. Гены регенерации — включились.</p>
+      </div>
+      <div class="hl"><p>Вы буквально можете включать и выключать гены тем, как живёте. Каждый день.</p></div>
+    </div>
+    <div>
+      <div class="ic">
+        <div style="text-align:center;margin-bottom:28px"><div class="bn" style="font-size:3.8rem">2 200</div><div class="sl">генов изменили экспрессию за 8 недель</div></div>
+        <svg width="100%" height="130" viewBox="0 0 380 130">
+          <text x="95" y="18" text-anchor="middle" fill="var(--rose)" font-size="12" font-weight="700" font-family="var(--R)">Стресс</text>
+          <rect x="20" y="30" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="20" y="30" width="120" height="16" rx="8" fill="rgba(160,92,88,.2)"/>
+          <text x="20" y="64" fill="var(--dim)" font-size="10" font-family="var(--R)">Гены воспаления: ↑ ВКЛ</text>
+          <rect x="20" y="78" width="150" height="16" rx="8" fill="rgba(61,122,85,.06)"/><rect x="20" y="78" width="35" height="16" rx="8" fill="rgba(61,122,85,.15)"/>
+          <text x="20" y="112" fill="var(--dim)" font-size="10" font-family="var(--R)">Гены восстановления: ↓ ВЫКЛ</text>
+          <text x="285" y="18" text-anchor="middle" fill="var(--sage)" font-size="12" font-weight="700" font-family="var(--R)">Покой</text>
+          <rect x="210" y="30" width="150" height="16" rx="8" fill="rgba(160,92,88,.06)"/><rect x="210" y="30" width="35" height="16" rx="8" fill="rgba(160,92,88,.12)"/>
+          <text x="210" y="64" fill="var(--dim)" font-size="10" font-family="var(--R)">Гены воспаления: ↓ снижены</text>
+          <rect x="210" y="78" width="150" height="16" rx="8" fill="rgba(61,122,85,.06)"/><rect x="210" y="78" width="130" height="16" rx="8" fill="rgba(61,122,85,.25)"/>
+          <text x="210" y="112" fill="var(--dim)" font-size="10" font-family="var(--R)">Гены восстановления: ↑ ВКЛ</text>
+        </svg>
+        <div class="ss">Benson et al., Harvard, PLOS ONE, 2013 · Kaliman et al., 2014</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФАКТ 9 -->
+<section class="fact rv">
+  <div class="fi">
+    <div>
+      <div class="fn">Факт 09</div>
+      <div class="ft">Тело умеет восстанавливаться. Ему нужен другой сигнал.</div>
+      <div class="fb">
+        <p>Всё, что стресс разрушает — тело может восстановить. Кишечник обновляется за <strong>3–5 дней</strong>. Печень регенерирует. Нейронные связи перестраиваются. Воспаление снижается.</p>
+        <p>Но только если <strong>тело получает сигнал безопасности</strong>.</p>
+        <p>Не «я знаю, что всё хорошо» — это мысль. А телесный, физиологический сигнал: дыхание замедляется, мышцы расслабляются, блуждающий нерв активируется.</p>
+        <p><strong>Переключение из режима борьбы в режим восстановления</strong> — это конкретный навык, который можно освоить.</p>
+      </div>
+      <div class="hl"><p>Исцеление — не случайность и не чудо. Это физиология тела, которому наконец дали сигнал: «Можно восстанавливаться».</p></div>
+    </div>
+    <div>
+      <div class="ic" style="text-align:center">
+        <svg width="100%" height="220" viewBox="0 0 400 220">
+          <text x="110" y="24" text-anchor="middle" fill="var(--dim)" font-size="13" font-weight="700" font-family="var(--R)">Режим борьбы</text>
+          <circle cx="110" cy="110" r="60" fill="none" stroke="rgba(160,92,88,.15)" stroke-width="2" stroke-dasharray="12 8"/>
+          <text x="110" y="105" text-anchor="middle" fill="var(--rose)" font-size="13" font-weight="600" font-family="var(--R)">Разрушение</text>
+          <text x="110" y="122" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">воспаление, износ</text>
+          <text x="200" y="115" text-anchor="middle" fill="var(--dim)" font-size="24" font-family="var(--R)">→</text>
+          <text x="290" y="24" text-anchor="middle" fill="var(--sage)" font-size="13" font-weight="700" font-family="var(--R)">Режим безопасности</text>
+          <circle cx="290" cy="110" r="60" fill="rgba(61,122,85,.04)" stroke="rgba(61,122,85,.25)" stroke-width="2"><animate attributeName="r" values="56;65;56" dur="4s" repeatCount="indefinite"/></circle>
+          <text x="290" y="105" text-anchor="middle" fill="var(--sage)" font-size="13" font-weight="600" font-family="var(--R)">Восстановление</text>
+          <text x="290" y="122" text-anchor="middle" fill="var(--dim)" font-size="11" font-family="var(--R)">регенерация, покой</text>
+          <text x="200" y="200" text-anchor="middle" fill="var(--dim)" font-size="12" font-family="var(--R)">Переключение — телесный навык, не мысль</text>
+        </svg>
+        <div class="ss">Porges, Polyvagal Theory, 2011 · Lazar et al., Harvard, 2011</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<div class="dv b2"></div>
+<section class="bridge rv">
+  <div class="bridge-i">
+    <div class="bridge-lb">Итого</div>
+    <h2>Тело — не враг. Оно ждёт <em>другого разговора.</em></h2>
+    <p>Большинство людей годами живут в режиме борьбы — с симптомами, с телом, с жизнью. Контролируют, справляются, «держатся».</p>
+    <p>А тело реагирует единственным способом, который знает: <strong>воспаление, боль, усталость, болезнь</strong>.</p>
+    <p>Но всё это можно изменить. Не за годы терапии. А через конкретный, физиологический сдвиг — из режима выживания в режим восстановления.</p>
+    <p class="fin">Для этого нужно не «понять». Нужно — почувствовать.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-w rv">
+  <div class="cta-c">
+    <h2>За пределами заболеваний</h2>
+    <p class="sub">90-минутная встреча о том, как перестать воевать с телом — и начать с ним разговаривать. Живая практика, которую вы заберёте с собой.</p>
+    <a href="https://thebodymindcode.github.io/Beyond/" class="btn">Узнать подробности →</a>
+    <div class="cta-meta">Zoom · Прямой эфир · Запись в подарок</div>
+    <div class="cta-ff">
+      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 90 минут</div>
+      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Живая практика</div>
+      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Конспект</div>
+      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Запись навсегда</div>
+    </div>
+  </div>
+</section>
+
+<footer><p>Архитектура Сознания · <a href="https://instagram.com/thebodymindcode" target="_blank">@thebodymindcode</a></p></footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
+const obs=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');i.target.querySelectorAll('.counter').forEach(animateCounter)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+function animateCounter(el){if(el.dataset.done)return;el.dataset.done='1';const t=+el.dataset.target,d=2200,s=performance.now();(function u(n){const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,4);el.textContent=Math.round(e*t).toLocaleString('ru-RU');if(p<1)requestAnimationFrame(u)})(s)}
+</script>
+</body>
+</html>
