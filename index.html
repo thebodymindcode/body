@@ -3,52 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>То, что держит болезнь на месте</title>
+<title>РАССЕКРЕЧЕНО · Механика здоровья</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Raleway',system-ui,sans-serif;background:#F8F5F0;color:#2E3530;font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
-h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,5.5vw,2.8rem);font-weight:500;line-height:1.18;color:#1A1E1B;margin-bottom:10px}
-p{margin-bottom:18px}
-strong{color:#1A1E1B;font-weight:600}
+body{
+  font-family:'Source Serif 4',Georgia,serif;
+  background:#d4c9a8;
+  color:#1a1a18;
+  font-size:17px;
+  line-height:1.8;
+  -webkit-font-smoothing:auto;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.05;pointer-events:none;z-index:10000;
+}
+.page{
+  max-width:700px;margin:0 auto;padding:40px 40px 60px;
+  background:linear-gradient(135deg,#efe6cc,#e8dfc4,#efe6cc);
+  box-shadow:0 4px 40px rgba(60,50,20,.15);
+  position:relative;
+  border:1px solid rgba(100,80,40,.15);
+}
+
+/* MASTHEAD */
+.masthead{text-align:center;padding:28px 0 20px;border-bottom:3px double #1a1a18;margin-bottom:24px;position:relative}
+.masthead-top{display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:.7rem;color:#5a5040;text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px}
+.masthead h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,5vw,2.5rem);font-weight:900;line-height:1.1;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.masthead .subtitle{font-family:'Source Serif 4',Georgia,serif;font-size:1rem;font-style:italic;color:#3a3528}
+.masthead::after{content:'';position:absolute;bottom:-8px;left:0;right:0;height:1px;background:#1a1a18}
+
+/* STAMPS */
+.stamp{position:absolute;font-family:'Special Elite','Courier Prime',monospace;color:rgba(180,30,20,.7);font-weight:700;text-transform:uppercase;border:3px solid rgba(180,30,20,.6);padding:6px 18px;transform:rotate(-8deg);font-size:clamp(.9rem,2.5vw,1.3rem);letter-spacing:.12em;z-index:100;pointer-events:none;background:rgba(239,230,204,.3)}
+.stamp-top{top:40px;right:24px}
+.stamp-declassified{position:relative;display:inline-block;font-family:'Special Elite','Courier Prime',monospace;color:rgba(180,30,20,.75);font-weight:700;text-transform:uppercase;border:3px solid rgba(180,30,20,.6);padding:4px 16px;font-size:.85rem;letter-spacing:.15em;transform:rotate(-3deg);margin:20px 0 8px}
+
+/* SECTION TABS */
+.file-tab{font-family:'Courier Prime',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:#5a5040;border-top:1px solid rgba(100,80,40,.2);border-bottom:1px solid rgba(100,80,40,.2);padding:8px 0;margin:40px 0 20px;display:flex;justify-content:space-between}
+.file-tab .redacted{background:#1a1a18;color:#1a1a18;padding:0 20px;font-size:.65rem}
+
+h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.2rem,3.5vw,1.55rem);font-weight:900;line-height:1.2;text-transform:uppercase;letter-spacing:.04em;margin:24px 0 18px}
+h3{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;font-style:italic;margin:24px 0 12px}
+p{margin-bottom:16px;text-align:left}
+strong{font-weight:700;color:#1a1a18}
 em{font-style:italic}
-.sub{font-size:.95rem;color:#6B756D;font-style:italic;margin-bottom:44px}
-.sep{width:50px;height:1px;background:linear-gradient(90deg,#3D7A55,transparent);margin:40px 0}
+.sep{width:50px;height:1px;background:linear-gradient(90deg,rgba(100,80,40,.3),transparent);margin:36px 0}
 
-/* WHITE BLOCKS */
-.block{background:#fff;border:1px solid rgba(61,122,85,0.1);padding:40px 36px;margin:28px 0}
-.block-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,3.8vw,1.85rem);font-weight:600;color:#1A1E1B;line-height:1.25;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(61,122,85,0.08)}
-.highlight{padding:20px 24px;background:rgba(61,122,85,0.04);border-left:3px solid #3D7A55;margin:24px 0;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-style:italic;color:#1A1E1B;line-height:1.5}
-.caps{font-weight:700;letter-spacing:.03em}
+.dropcap::first-letter{float:left;font-family:'Playfair Display',Georgia,serif;font-size:3.4rem;font-weight:900;line-height:.85;margin:4px 10px 0 0}
+.pullquote{border-top:2px solid #1a1a18;border-bottom:2px solid #1a1a18;padding:16px 0;margin:28px 0;text-align:center;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;font-style:italic;line-height:1.4}
+.photo{background:#b8ad94;border:1px solid rgba(100,80,40,.2);padding:8px;margin:24px 0}
+.photo-inner{background:#8a8070;min-height:180px;display:flex;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-size:.75rem;color:#d4c9a8;text-transform:uppercase;letter-spacing:.15em;text-align:center;padding:20px;position:relative}
+.photo-inner::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.1),transparent,rgba(0,0,0,.08))}
+.photo-caption{font-family:'Courier Prime',monospace;font-size:.68rem;color:#5a5040;text-transform:uppercase;letter-spacing:.1em;margin-top:6px;text-align:center}
+.photo-caption .classified{background:rgba(180,30,20,.12);border:1px solid rgba(180,30,20,.3);padding:1px 8px;font-size:.6rem;color:rgba(180,30,20,.7);margin-left:6px}
+.sidebar{background:rgba(180,30,20,.04);border:1px solid rgba(180,30,20,.15);padding:18px 20px;margin:24px 0;font-size:.92rem}
+.sidebar-title{font-family:'Special Elite','Courier Prime',monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(180,30,20,.7);margin-bottom:8px;font-weight:700}
+.stat-row{display:flex;justify-content:space-between;gap:16px;margin:24px 0;flex-wrap:wrap}
+.stat{text-align:center;flex:1;min-width:80px}
+.stat-num{font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:900;line-height:1}
+.stat-label{font-family:'Courier Prime',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#5a5040;margin-top:4px}
 
-.product-block{background:#fff;border:1px solid rgba(61,122,85,0.14);padding:36px;margin:28px 0}
-.product-block h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:600;color:#1A1E1B;margin-bottom:14px}
-.cta-link{display:inline-block;margin-top:20px;padding:16px 40px;background:#3D7A55;color:#fff;text-decoration:none;font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-family:'Raleway',sans-serif;transition:background .3s}
-.cta-link:hover{background:#2D6343}
-.text-link{color:#3D7A55;text-decoration:underline;text-underline-offset:4px;font-weight:500}
-.brand{text-align:center;padding:36px 0;border-top:1px solid rgba(61,122,85,0.1);margin-top:56px;font-size:.85rem;color:#6B756D}
-.brand a{color:#3D7A55;text-decoration:none}
+.cta-section{border-top:3px double #1a1a18;margin-top:40px;padding-top:28px;text-align:center}
+.red-highlight{background:rgba(180,30,20,.07);border:2px solid rgba(180,30,20,.4);padding:28px 28px 32px;margin:20px 0;position:relative}
+.red-highlight::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(180,30,20,.6)}
+.red-highlight h3{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:900;color:rgba(180,30,20,.85);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.cta-link{display:inline-block;margin-top:16px;padding:14px 36px;background:rgba(180,30,20,.8);color:#efe6cc;text-decoration:none;font-family:'Courier Prime',monospace;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:all .3s}
+.cta-link:hover{background:rgba(150,20,15,.9)}
+.text-link{color:#1a1a18;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.brand{text-align:center;padding:28px 0 0;font-family:'Courier Prime',monospace;font-size:.7rem;color:#5a5040;letter-spacing:.1em}
+.brand a{color:#5a5040;text-decoration:none}
 
-@media(max-width:600px){
-  .wrap{padding:36px 16px 60px}body{font-size:16px}
-  .block{padding:28px 20px}
-  .product-block{padding:28px 20px}
+@media(max-width:700px){
+  .page{padding:24px 18px 48px}body{font-size:16px}
+  .stamp-top{top:24px;right:12px;font-size:.8rem;padding:4px 12px}
+  .photo-inner{min-height:140px}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="page">
 
-<h1>То, что держит болезнь на месте,<br>не&nbsp;то, что вы думаете</h1>
-<p class="sub">Механика здоровья, которую намеренно не преподают</p>
+<div class="stamp stamp-top">TOP SECRET</div>
 
-<div class="sep"></div>
+<div class="masthead">
+  <div class="masthead-top"><span>&#8470; РС-2026-0325</span><span>Гриф снят</span></div>
+  <h1>То, что держит болезнь<br>на месте</h1>
+  <div class="subtitle">Механика здоровья, которую намеренно не преподают</div>
+</div>
 
-<p>Вспомните один конкретный момент.</p>
+<div class="stamp-declassified">&#9608; РАССЕКРЕЧЕНО</div>
 
-<p>Вы смотрите на результаты анализов. Или на весы. Или в зеркало после очередного обострения. И внутри тихое, почти привычное: &laquo;Ну вот, снова&raquo;.</p>
+<div class="photo" style="margin:24px 0 32px">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/8e385fcf271802ed9b8bdc238b219459_a1d6375b-00d5-4564-8b88-9416be5bc605.png" alt="Рассекреченное досье: Механика здоровья" style="width:100%;display:block;filter:grayscale(1) contrast(1.1)">
+  <div class="photo-caption">Дело &#8470; 741 &middot; Механика здоровья &middot; 1963&ndash;1971 <span class="classified">рассекречено</span></div>
+</div>
+
+<p class="dropcap">Вспомните один конкретный момент. Вы смотрите на результаты анализов. Или на весы. Или в зеркало после очередного обострения. И внутри тихое, почти привычное: &laquo;Ну вот, снова&raquo;.</p>
 
 <p>Не паника. Хуже. <strong>Смирение.</strong></p>
 
@@ -64,8 +117,9 @@ em{font-style:italic}
 
 
 <!-- ====== ЧАСТЬ 1 ====== -->
-<div class="block">
-<div class="block-title">ЧАСТЬ ПЕРВАЯ. Что на самом деле происходит и почему вам об этом не говорят</div>
+<div class="file-tab"><span>Часть I &middot; Досье</span><span class="redacted">CLASSIFIED</span></div>
+
+<h2>Что на самом деле происходит и почему вам об этом не говорят</h2>
 
 <p>Официальная медицина работает с симптомами.</p>
 
@@ -81,9 +135,19 @@ em{font-style:italic}
 
 <p>Но есть нюанс. Эту цифру знают. Просто лечить режим нервной системы невыгодно. Это не таблетка с патентом. Это знание, которое человек применяет сам. Один раз понял и больше не нуждается в симптоматическом лечении годами.</p>
 
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">75-90%</div><div class="stat-label">визитов к врачу<br>связаны со стрессом</div></div>
+  <div class="stat"><div class="stat-num">$1.6T</div><div class="stat-label">фармацевтический<br>рынок, 2024</div></div>
+</div>
+
 <p>Фармацевтический рынок в 2024 году: <strong>$1,6 триллиона</strong>. Посчитайте сами, кому выгодно, чтобы вы это знали.</p>
 
 <div class="sep"></div>
+
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/bbb07296dd42fd39a307d8e9e63ae9f0_3c17044b-a7dd-42a1-854e-16117305e184.png" alt="Н.П. Бехтерева в лаборатории нейрофизиологии" style="width:100%;display:block;filter:grayscale(1) contrast(1.1)">
+  <div class="photo-caption">Н.П. Бехтерева, лаборатория нейрофизиологии, СССР <span class="classified">засекречено до 1990</span></div>
+</div>
 
 <p>В 1952 году советский нейрофизиолог <strong>Наталья Петровна Бехтерева</strong> сделала открытие, которое перевернуло понимание мозга и болезни.</p>
 
@@ -95,9 +159,22 @@ em{font-style:italic}
 
 <p>Хорошая новость: жёсткие звенья не приговор. Они поддаются изменению. Но не через силу воли. <strong>Через конкретную работу с телом.</strong></p>
 
-<p>Её работы в СССР засекречивали. Потому что человек, который понимает механику собственного состояния, не идёт за таблеткой. Он идёт за причиной.</p>
+<div class="sidebar">
+  <div class="sidebar-title">&#9608; Почему засекречивали</div>
+  <p style="margin-bottom:0">Её работы в СССР засекречивали. Потому что человек, который понимает механику собственного состояния, не идёт за таблеткой. Он идёт за причиной.</p>
+</div>
+
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/d64f42362d5fa2abbeca038c721aeabc_00af95c6-fb10-4867-a594-8ea1adf89dd3.png" alt="Н.П. Бехтерева, Институт мозга человека" style="width:100%;display:block;filter:grayscale(1) contrast(1.1)">
+  <div class="photo-caption">Академик Н.П. Бехтерева, Институт мозга человека РАН <span class="classified">архив</span></div>
+</div>
 
 <div class="sep"></div>
+
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/6dac995369c8979d503fe6314a300a56_b350e2ac-10e7-4c2f-8d83-50aa7856eed4.png" alt="П.П. Гаряев в лаборатории" style="width:100%;display:block;filter:grayscale(1) contrast(1.1)">
+  <div class="photo-caption">П.П. Гаряев, волновая генетика, 1990-е <span class="classified">финансирование закрыто</span></div>
+</div>
 
 <p>В 1990-х российский биофизик <strong>Пётр Гаряев</strong> открыл нечто ещё более революционное.</p>
 
@@ -112,12 +189,12 @@ em{font-style:italic}
 <p>Но в 2013 году Гарвард опубликовал в PLOS ONE исследование группы Герберта Бенсона: <strong>8 недель работы с состоянием нервной системы меняют экспрессию более 2&nbsp;200 генов</strong>. Без единого лекарства. Только через переключение режима.</p>
 
 <p>Гаряев оказался прав. Просто об этом написали по-другому.</p>
-</div>
 
 
 <!-- ====== ЧАСТЬ 2 ====== -->
-<div class="block">
-<div class="block-title">ЧАСТЬ ВТОРАЯ. Три вещи о вашем теле, которые меняют всё</div>
+<div class="file-tab"><span>Часть II &middot; Три мозга</span><span class="redacted">CLASSIFIED</span></div>
+
+<h2>Три вещи о вашем теле, которые меняют всё</h2>
 
 <p>Вы думаете, у вас один мозг. На самом деле <strong>три</strong>.</p>
 
@@ -133,11 +210,22 @@ em{font-style:italic}
 
 <p><strong>Третий мозг в сердце.</strong> В 1991 году доктор Эндрю Армор обнаружил в сердце <strong>40&nbsp;000 нейронов</strong>. Институт HeartMath доказал: сердце посылает мозгу в 5 раз больше сигналов, чем мозг сердцу. Когда сердце в состоянии когерентности, мозг думает иначе. Яснее. Без тревожного фона.</p>
 
-<div class="highlight">Три мозга. Одна сеть. И один нерв, который управляет всем.</div>
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">100M</div><div class="stat-label">нейронов<br>в кишечнике</div></div>
+  <div class="stat"><div class="stat-num">40K</div><div class="stat-label">нейронов<br>в сердце</div></div>
+  <div class="stat"><div class="stat-num">90%</div><div class="stat-label">серотонина<br>из кишечника</div></div>
+</div>
 
-<div class="sep"></div>
+<div class="pullquote">Три мозга. Одна сеть.<br>И один нерв, который управляет всем.</div>
 
-<p><strong>Блуждающий нерв</strong>: самый длинный нерв в теле. Он соединяет мозг с сердцем, лёгкими, кишечником, печенью и иммунной системой одновременно.</p>
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/be143637c20324136a3730af0ac1c962_bd5a8b9a-94e1-4d71-8bad-1de2539f9415.png" alt="Блуждающий нерв: три мозга, одна сеть" style="width:100%;display:block">
+  <div class="photo-caption">Vagus Nerve: три нейронных центра, одна система <span class="classified">Fig. 3</span></div>
+</div>
+
+<h3>Блуждающий нерв</h3>
+
+<p>Самый длинный нерв в теле. Он соединяет мозг с сердцем, лёгкими, кишечником, печенью и иммунной системой одновременно.</p>
 
 <p>Его тонус определяет одну ключевую вещь: <strong>насколько быстро тело выходит из стресса и переключается на восстановление</strong>.</p>
 
@@ -145,15 +233,15 @@ em{font-style:italic}
 
 <p><strong>Низкий тонус</strong> и вот здесь начинается то, что большинство людей называют &laquo;у меня плохое здоровье&raquo;. Хроническое воспаление. Нарушение пищеварения. Лишний вес, который не уходит несмотря на любые диеты. Усталость, которая не проходит. Тревога фоном. Иммунитет, который реагирует на всё подряд. Частые простуды, когда тело перестало справляться даже с самым обычным.</p>
 
-<div class="highlight"><strong>Это не разные диагнозы. Это симптомы ОДНОГО режима нервной системы.</strong></div>
+<p><strong>Это не разные диагнозы. Это симптомы ОДНОГО режима нервной системы.</strong></p>
 
 <p>И тонус блуждающего нерва поддаётся изменению. Конкретными практиками. Без лекарств.</p>
-</div>
 
 
 <!-- ====== ЧАСТЬ 3 ====== -->
-<div class="block">
-<div class="block-title">ЧАСТЬ ТРЕТЬЯ. Почему хронические болезни не уходят и что с этим делать на самом деле</div>
+<div class="file-tab"><span>Часть III &middot; Режим угрозы</span><span class="redacted">CLASSIFIED</span></div>
+
+<h2>Почему хронические болезни не уходят и что с этим делать на самом деле</h2>
 
 <p>Вот вопрос, который стоит задать себе честно.</p>
 
@@ -165,9 +253,9 @@ em{font-style:italic}
 
 <p>Есть <strong>точная причина</strong>, почему это не уходит.</p>
 
-<div class="highlight" style="text-align:center;font-size:1.25rem;font-weight:600;font-style:normal"><strong>ТЕЛО НЕ ЛЕЧИТСЯ В РЕЖИМЕ УГРОЗЫ.</strong></div>
+<div class="pullquote">ТЕЛО НЕ ЛЕЧИТСЯ<br>В РЕЖИМЕ УГРОЗЫ.</div>
 
-<p>Когда нервная система в хроническом стрессе, организм перенаправляет <strong>все</strong> ресурсы на выживание. Пищеварение замедляется. Иммунная система переходит в режим гиперреактивности или подавления. Гормональный фон смещается. Метаболизм замедляется: тело буквально удерживает жир как ресурс &laquo;на случай опасности&raquo;. Воспалительные процессы нарастают.</p>
+<p>Когда нервная система в хроническом стрессе, организм перенаправляет все ресурсы на выживание. Пищеварение замедляется. Иммунная система переходит в режим гиперреактивности или подавления. Гормональный фон смещается. Метаболизм замедляется: тело буквально удерживает жир как ресурс &laquo;на случай опасности&raquo;. Воспалительные процессы нарастают.</p>
 
 <p>Вы принимаете лекарство. Оно работает с симптомом. Но <strong>режим нервной системы остаётся прежним</strong>. И тело снова и снова возвращает симптом. Потому что симптом не болезнь. Это сигнал о режиме.</p>
 
@@ -179,7 +267,12 @@ em{font-style:italic}
 
 <p>Финские учёные в 2014 году провели исследование на <strong>700 участниках</strong> из разных стран и культур. Попросили нарисовать на силуэте тела, где они чувствуют разные эмоции. Карты совпали с точностью до деталей. Независимо от языка и культуры.</p>
 
-<p><strong>Страх</strong>: грудь и живот. <strong>Гнев</strong>: руки и голова. <strong>Стыд</strong>: сжатие всего тела. <strong>Хроническое напряжение</strong>: плечи, поясница, солнечное сплетение.</p>
+<p><strong>Страх:</strong> грудь и живот. <strong>Гнев:</strong> руки и голова. <strong>Стыд:</strong> сжатие всего тела. <strong>Хроническое напряжение:</strong> плечи, поясница, солнечное сплетение.</p>
+
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/92786ba602014852e6903fe3309625c2_74f4d753-0eff-4fd8-953c-3732257d5261.png" alt="Карта эмоций в теле" style="width:100%;display:block">
+  <div class="photo-caption">Карта эмоций в теле, Nummenmaa et al., PNAS, 2014 <span class="classified">700 участников</span></div>
+</div>
 
 <p>Тело хранит эмоции в конкретных местах. Это кросс-культурная нейробиология.</p>
 
@@ -191,21 +284,25 @@ em{font-style:italic}
 
 <p>Спецслужбы знали об этом раньше, чем это стало официальной наукой.</p>
 
+<div class="photo">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/body_/main/51ebf70b5f301f816b150c9ae5a86db4_a4516dbc-650d-4fa7-877c-ded1868d27b0.png" alt="Рассекреченные документы ЦРУ Gateway Process" style="width:100%;display:block;filter:grayscale(1) contrast(1.1)">
+  <div class="photo-caption">Проект Gateway, ЦРУ, 1983 <span class="classified">declassified 2003</span></div>
+</div>
+
 <p>Рассекреченные в 2003 году документы проекта <strong>ЦРУ Gateway Process</strong> (1983) описывают систематическую работу с состояниями нервной системы.</p>
 
-<p>Исследователи документировали: когда человек находится в определённом физиологическом режиме, меняется <span class="caps">ВСЁ</span>. Скорость восстановления тела. Болевой порог. Иммунный ответ. Качество решений. Уровень энергии.</p>
+<p>Исследователи документировали: когда человек находится в определённом физиологическом режиме, меняется всё. Скорость восстановления тела. Болевой порог. Иммунный ответ. Качество решений. Уровень энергии.</p>
 
-<p>Это засекречивали не потому что не работало. <strong>Потому что работало слишком хорошо.</strong></p>
-
-<p>Человек, умеющий управлять режимом своей нервной системы: это человек с другим здоровьем. Другой биохимией. Другим весом. Другим качеством жизни.</p>
-
-<p>И это не дар. <strong>Это навык.</strong></p>
+<div class="sidebar">
+  <div class="sidebar-title">&#9608; Засекречено</div>
+  <p style="margin-bottom:0">Это засекречивали не потому что не работало. <strong>Потому что работало слишком хорошо.</strong> Человек, умеющий управлять режимом своей нервной системы: это человек с другим здоровьем. Другой биохимией. Другим весом. Другим качеством жизни. И это не дар. <strong>Это навык.</strong></p>
 </div>
 
 
 <!-- ====== ЧАСТЬ 4 ====== -->
-<div class="block">
-<div class="block-title">ЧАСТЬ ЧЕТВЁРТАЯ. Что происходит, когда режим меняется и почему ваша проблема решаема</div>
+<div class="file-tab"><span>Часть IV &middot; Переключение</span><span class="redacted">CLASSIFIED</span></div>
+
+<h2>Что происходит, когда режим меняется и почему ваша проблема решаема</h2>
 
 <p>В 2013 году <strong>Герберт Бенсон</strong> из Гарварда завершил исследование, которое готовил 20 лет.</p>
 
@@ -215,11 +312,17 @@ em{font-style:italic}
 
 <p>Без таблеток. Без хирургии. <strong>Через состояние.</strong></p>
 
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">2 200</div><div class="stat-label">генов изменили<br>экспрессию</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">недель<br>практики</div></div>
+  <div class="stat"><div class="stat-num">0</div><div class="stat-label">таблеток<br>и хирургии</div></div>
+</div>
+
 <p>Теперь конкретно о том, что это значит для вас.</p>
 
 <p><strong>Лишний вес, который &laquo;не уходит&raquo;.</strong> Это часто не вопрос метаболизма и не вопрос силы воли. Тело в режиме хронического стресса удерживает жировые запасы как ресурс на случай угрозы. Кортизол блокирует жиросжигание напрямую. Когда режим меняется, метаболизм перестраивается. Не за месяцы изнурительных ограничений. <strong>За недели работы с нервной системой.</strong></p>
 
-<p><strong>Хроническое воспаление</strong>: основа большинства современных болезней (сердечно-сосудистых, аутоиммунных, диабета) напрямую связано с тонусом блуждающего нерва. Меняется тонус, меняется воспалительный фон. Исследования показывают снижение маркеров воспаления уже через <strong>4&ndash;8 недель</strong>.</p>
+<p><strong>Хроническое воспаление:</strong> основа большинства современных болезней (сердечно-сосудистых, аутоиммунных, диабета) напрямую связано с тонусом блуждающего нерва. Меняется тонус, меняется воспалительный фон. Исследования показывают снижение маркеров воспаления уже через <strong>4&ndash;8 недель</strong>.</p>
 
 <p><strong>Аутоиммунные реакции:</strong> иммунная система, которая атакует собственные ткани. Это в значительной мере следствие хронического стресса и нарушения работы блуждающего нерва. Стабилизируется нервная система, стабилизируется иммунный ответ.</p>
 
@@ -230,12 +333,12 @@ em{font-style:italic}
 <p>Кишечник обновляется за <strong>3&ndash;5 дней</strong>. Микрофлора перестраивается за <strong>2 недели</strong>. Нейронные связи за несколько месяцев. Теломеры перестают укорачиваться и начинают восстанавливаться.</p>
 
 <p>Это не значит &laquo;откажитесь от врача&raquo;. Это значит: у вашего тела есть <strong>мощнейшие механизмы самовосстановления</strong>, которые сейчас заблокированы режимом. Разблокируйте режим, и эти механизмы заработают в полную силу.</p>
-</div>
 
 
 <!-- ====== ЧАСТЬ 5 ====== -->
-<div class="block">
-<div class="block-title">ЧАСТЬ ПЯТАЯ. Это не конец статьи. Это начало другого разговора с телом.</div>
+<div class="file-tab"><span>Часть V &middot; Доступ</span><span class="redacted">CLASSIFIED</span></div>
+
+<h2 style="color:rgba(180,30,20,.85)">Это не конец статьи. Это начало другого разговора с телом.</h2>
 
 <p>Вы только что узнали о механике своего здоровья больше, чем за большинство визитов к врачам.</p>
 
@@ -253,7 +356,7 @@ em{font-style:italic}
 
 <p>Всё, что вы только что прочитали, это механика. Она работает. Но она работает не тогда, когда вы её <em>знаете</em>. А тогда, когда вы её <em>почувствовали</em>. Когда тело один раз прошло через это и запомнило. Как это: другой режим. Как это: когда сигнал меняется.</p>
 
-<div class="highlight"><strong>Этот опыт нельзя получить из статьи. Его нельзя прочитать. Его можно только пережить.</strong></div>
+<div class="pullquote">Этот опыт нельзя получить из статьи.<br>Его нельзя прочитать. Его можно только пережить.</div>
 
 <p>Несколько месяцев назад я провела мастер-класс &laquo;За пределами заболеваний&raquo;.</p>
 
@@ -268,43 +371,46 @@ em{font-style:italic}
 <p>После эфира я получила столько откликов, что стало ясно: эти знания не должны остаться только у тех, кто был на том эфире. Слишком важно. Слишком нужно, слишком многим.</p>
 
 <p><strong>Поэтому запись мастер-класса теперь доступна.</strong></p>
-</div>
 
 
 <!-- ====== ПРОДУКТ ====== -->
-<div class="product-block">
-<h3>Запись мастер-класса &laquo;За пределами заболеваний&raquo;</h3>
+<div class="cta-section">
 
-<p style="margin-bottom:16px"><strong>120 минут</strong>: разбор того, что происходит именно с вашим телом. Почему нервная система застряла в этом режиме, как работают три мозга, и что конкретно держит симптомы на месте. И практика переключения. Та самая, которую участники делали прямо в эфире и чувствовали результат в теле здесь и сейчас.</p>
+<h2 style="margin-top:0;color:rgba(180,30,20,.85)">Запись + книга</h2>
 
-<p style="margin-bottom:0">Те, кто уже посмотрел запись, говорят одно: <strong>&laquo;Я впервые понял, что происходило со мной всё это время&raquo;</strong>. Не &laquo;стало лучше&raquo;. Именно <em>понял</em>. А понимание плюс телесный опыт: это то, после чего тело начинает меняться. По-настоящему.</p>
-</div>
+<p style="text-align:left"><strong style="color:rgba(180,30,20,.85);font-size:1.05rem">Запись мастер-класса &laquo;За пределами заболеваний&raquo;</strong></p>
 
-<div class="product-block">
-<h3>Книга &laquo;Тело говорит первым&raquo;</h3>
+<p style="text-align:left"><strong>120 минут</strong>: разбор того, что происходит именно с вашим телом. Почему нервная система застряла в этом режиме, как работают три мозга, и что конкретно держит симптомы на месте. И практика переключения. Та самая, которую участники делали прямо в эфире и чувствовали результат в теле здесь и сейчас.</p>
 
-<p style="margin-bottom:16px">Работает как продолжение мастер-класса. Это не справочник. Это переводчик с языка тела на язык причин, созданный в той же логике, что весь мастер-класс.</p>
-
-<p style="margin-bottom:16px"><strong>40 страниц.</strong> Каждый симптом разобран через ту же механику: что происходит в нервной системе, почему тело подаёт именно этот сигнал и что с этим делать. Не &laquo;обратитесь к специалисту&raquo; в общем. А конкретно: какой режим создал этот симптом и как начать его менять.</p>
-
-<p style="margin-bottom:0">Вы смотрите запись: получаете понимание и практику. Открываете книгу: видите карту своих симптомов через ту же оптику. <strong>Два инструмента, которые усиливают друг друга.</strong></p>
-</div>
+<p style="text-align:left">Те, кто уже посмотрел запись, говорят одно: <strong>&laquo;Я впервые понял, что происходило со мной всё это время&raquo;</strong>. Не &laquo;стало лучше&raquo;. Именно <em>понял</em>. А понимание плюс телесный опыт: это то, после чего тело начинает меняться. По-настоящему.</p>
 
 <div class="sep"></div>
 
-<p style="font-style:italic;color:#4A524C;line-height:1.75"><strong style="color:#1A1E1B">Этой комбинации нет больше нигде</strong>, потому что никто не собирал это вместе. Засекреченные исследования, нейробиология трёх мозгов, работы Бехтеревой и Гаряева, Гарвардские данные по генам и конкретная практика, которая всё это переводит в телесный опыт.</p>
+<p style="text-align:left"><strong style="color:rgba(180,30,20,.85);font-size:1.05rem">Книга &laquo;Тело говорит первым&raquo;</strong></p>
 
-<p style="font-style:italic;color:#4A524C;line-height:1.75">Не теория. Не очередной курс. Знание, которое сразу работает, потому что обращается к телу, а не только к голове.</p>
+<p style="text-align:left">Работает как продолжение мастер-класса. Это не справочник. Это переводчик с языка тела на язык причин, созданный в той же логике, что весь мастер-класс.</p>
 
-<p style="font-style:italic;color:#4A524C;line-height:1.75"><strong style="color:#1A1E1B">Те, кто берут это сейчас, получают то, что большинство людей не получат никогда.</strong> Просто потому что не узнают, что это существует.</p>
+<p style="text-align:left"><strong>40 страниц.</strong> Каждый симптом разобран через ту же механику: что происходит в нервной системе, почему тело подаёт именно этот сигнал и что с этим делать. Не &laquo;обратитесь к специалисту&raquo; в общем. А конкретно: какой режим создал этот симптом и как начать его менять.</p>
 
-<p style="text-align:center;margin:36px 0 12px">
-  <a href="https://thebodymindcode.github.io/Beyond/" class="cta-link">Получить запись + книгу</a>
-</p>
+<p style="text-align:left">Книга работает как продолжение мастер-класса. Вы смотрите запись: получаете понимание и практику. Открываете книгу: видите карту своих симптомов через ту же оптику. <strong>Два инструмента, которые усиливают друг друга.</strong></p>
 
-<p style="text-align:center;font-size:.95rem;margin-top:20px">Хотите только книгу? <a href="https://thebodymindcode.github.io/bodybook/" class="text-link">Купить книгу отдельно &rarr;</a></p>
+<div class="sep"></div>
 
-<div class="brand"><p>Архитектура Сознания &middot; <a href="https://t.me/thebodymindcode" target="_blank">@thebodymindcode</a> &middot; <a href="https://instagram.com/thebodymindcode" target="_blank">Instagram</a></p></div>
+<p style="font-style:italic;color:#5a5040;font-size:.92rem;text-align:left;line-height:1.7"><strong style="color:#1a1a18">Этой комбинации нет больше нигде</strong>, потому что никто не собирал это вместе. Засекреченные исследования, нейробиология трёх мозгов, работы Бехтеревой и Гаряева, Гарвардские данные по генам и конкретная практика, которая всё это переводит в телесный опыт.</p>
+
+<p style="font-style:italic;color:#5a5040;font-size:.92rem;text-align:left;line-height:1.7">Не теория. Не очередной курс. Знание, которое сразу работает, потому что обращается к телу, а не только к голове.</p>
+
+<p style="font-style:italic;color:#5a5040;font-size:.92rem;text-align:left;line-height:1.7"><strong style="color:#1a1a18">Те, кто берут это сейчас, получают то, что большинство людей не получат никогда.</strong> Просто потому что не узнают, что это существует.</p>
+
+<p style="margin-bottom:4px"><strong>60+ человек уже получили доступ.</strong></p>
+
+<a href="https://thebodymindcode.github.io/Beyond/" class="cta-link">&#9654; Получить запись + книгу</a>
+
+<p style="margin-top:20px;font-size:.9rem">Хотите только книгу? <a href="https://thebodymindcode.github.io/bodybook/" style="color:rgba(180,30,20,.8);text-decoration:underline;text-underline-offset:3px;font-weight:600">Купить книгу отдельно &rarr;</a></p>
+
+</div>
+
+<div class="brand"><p>Архитектура Сознания &middot; <a href="https://t.me/thebodymindcode">@thebodymindcode</a> &middot; <a href="https://instagram.com/thebodymindcode">Instagram</a></p></div>
 
 </div>
 </body>
